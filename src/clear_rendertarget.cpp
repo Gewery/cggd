@@ -8,7 +8,7 @@
 #include <stdexcept>
 
 
-cg::ClearRenderTarget::ClearRenderTarget(unsigned short width, unsigned short height) :
+cg::ClearRenderTarget::ClearRenderTarget(unsigned width, unsigned height) :
     width(width),
     height(height)
 {
@@ -40,7 +40,7 @@ void cg::ClearRenderTarget::Save(std::string filename) const
     }
 }
 
-void cg::ClearRenderTarget::SetPixel(unsigned short x, unsigned short y, color color)
+void cg::ClearRenderTarget::SetPixel(unsigned x, unsigned y, color color)
 {
     frame_buffer[y * width + x] = color;
 }
