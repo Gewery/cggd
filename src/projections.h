@@ -35,6 +35,12 @@ namespace cg
 
 	};
 
+	struct ConstantBuffer {
+		float4x4 World;
+		float4x4 View;
+		float4x4 Projection;
+	};
+
 	class Projections : public LineDrawing
 	{
 	public:
@@ -45,6 +51,11 @@ namespace cg
 
 	protected:
 		ObjParser* parser;
+		ConstantBuffer cb;
+
+		void Rasterizer(face face);
+
+		float4 VertexShader(float4 face);
 
 	};
 
