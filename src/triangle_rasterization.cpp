@@ -16,6 +16,8 @@ cg::TriangleRasterization::~TriangleRasterization()
 
 void cg::TriangleRasterization::DrawScene()
 {
+
+    std::vector<cg::face> faces;
     unsigned id = 0;
     for (auto face : parser->GetFaces()) {
         //std::cout << face.vertexes[0] << " " << face.vertexes[1] << " " << face.vertexes[2] << "\n";
@@ -24,12 +26,22 @@ void cg::TriangleRasterization::DrawScene()
             face.vertexes[i] = VertexShader(face.vertexes[i]);
         }
 
-        Rasterizer(face);
+        faces.push_back(face);
+
 
         /*auto vs_out = VertexShader(face);
         auto raster_out = Rasterizer(vs_out);
         auto ps_out = PixelShader(raster_out);
         OutMerger(ps_out);*/
+    }
+
+    std::sort(faces.begin(), faces.end(), [](cg::face a, cg::face b) {
+        return std::max(std::max(a.vertexes[0].z, a.vertexes[1].z), a.vertexes[2].z) > 
+            std::max(std::max(b.vertexes[0].z, b.vertexes[1].z), b.vertexes[2].z);
+    });
+
+    for (auto face : faces) {
+        Rasterizer(face);
     }
 }
 

@@ -48,7 +48,7 @@ namespace cg
 		Projections(unsigned short width, unsigned short height, std::string obj_file);
 		virtual ~Projections();
 
-		void DrawScene();
+		virtual void DrawScene();
 
 	protected:
 		ObjParser* parser;

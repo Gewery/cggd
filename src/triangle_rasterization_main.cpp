@@ -10,8 +10,12 @@ int main(int argc, char* argv[])
         cg::TriangleRasterization* render = new cg::TriangleRasterization(1920, 1080, "models/CornellBox-Original.obj");
 
         render->Clear();
-
+        
+        auto start = std::chrono::high_resolution_clock::now();
+        
         render->DrawScene();
+
+        std::cout << "Render time: " << ((std::chrono::duration<double>)(std::chrono::high_resolution_clock::now() - start)).count() << "\n";
 
         render->Save("results/triangle_rasterization.png");
 
