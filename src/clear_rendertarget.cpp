@@ -17,7 +17,6 @@ cg::ClearRenderTarget::ClearRenderTarget(unsigned width, unsigned height) :
 
 cg::ClearRenderTarget::~ClearRenderTarget()
 {
-    throw std::runtime_error("Not implemented yet");
 }
 
 void cg::ClearRenderTarget::Clear()

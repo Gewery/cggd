@@ -5,6 +5,7 @@
 
 #include <linalg.h>
 using namespace linalg::aliases;
+using namespace linalg::ostream_overloads;
 
 #include <iostream>
 #include <filesystem>
