@@ -13,7 +13,7 @@ namespace cg
 		TriangleRasterization(unsigned short width, unsigned short height, std::string obj_file);
 		virtual ~TriangleRasterization();
 
-		void DrawScene();
+		//void DrawScene();
 
 	protected:
 		void DrawTriangle(face face);

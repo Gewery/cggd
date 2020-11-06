@@ -83,7 +83,7 @@ cg::Projections::Projections(unsigned short width, unsigned short height, std::s
     parser = new ObjParser(obj_file);
     parser->Parse();
 
-    cb.World = float4x4{ {1, 0, 0, 0}, {0, 1, 0, 0}, {0, 0, 1, 0}, {0, -1, -3, 1} };
+    cb.World = float4x4{ {1, 0, 0, 0}, {0, 1, 0, 0}, {0, 0, 1, 0}, {0, -1, -4, 1} };
 
     float3 eye{ 0, 1, 1 };
     float3 at{ 0, 1, 0 };

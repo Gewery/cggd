@@ -60,7 +60,7 @@ project "04. Triangle rasterization"
       files { "src/projections.h", "src/projections.cpp" }
       files { "src/triangle_rasterization.h", "src/triangle_rasterization.cpp" }
       files { "src/triangle_rasterization_main.cpp" }
---[[
+
 project "05. Depth buffer"
    kind "ConsoleApp"
       includedirs { "src/" }
@@ -74,4 +74,3 @@ project "05. Depth buffer"
       files { "src/triangle_rasterization.h", "src/triangle_rasterization.cpp" }
       files { "src/depth_buffer.h", "src/depth_buffer.cpp" }
       files { "src/depth_buffer_main.cpp" }
-]]--
