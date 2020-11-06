@@ -16,7 +16,9 @@ namespace cg
 		void DrawScene();
 
 	protected:
-		void DrawTriangle(float4 traingle[3]);
+		void DrawTriangle(face face);
+
+		color PixelShader(float2 coordinates, float3 bary, unsigned id = 0);
 
 		float EdgeFunction(float2 a, float2 b, float2 c);
 	};
